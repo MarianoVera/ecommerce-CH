@@ -1,12 +1,14 @@
+import CardWidget from "./CartWidget.js";
+
 const NavBar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#home">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#home">
           SomeSoft
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -14,32 +16,33 @@ const NavBar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#home">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="#home">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#software">
+            <li className="nav-item">
+              <a className="nav-link" href="#software">
                 Software
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#hardware">
+            <li className="nav-item">
+              <a className="nav-link" href="#hardware">
                 Hardware
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">
+            <li className="nav-item">
+              <a className="nav-link" href="#contact">
                 Contact
               </a>
             </li>
           </ul>
         </div>
+        <CardWidget />
       </div>
     </nav>
   );
