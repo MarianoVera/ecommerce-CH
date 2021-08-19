@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
-import { Card } from "semantic-ui-react";
-import ItemCount from "./ItemCount/ItemCount";
+//import { Card } from "semantic-ui-react";
+//import ItemCount from "./ItemCount/ItemCount";
+import ItemList from "../components/ItemList/ItemList";
 
 const ItemListContainer = ({ img1, img2, img3 }) => {
   const initial = 1;
@@ -16,7 +17,9 @@ const ItemListContainer = ({ img1, img2, img3 }) => {
     <Fragment>
       <div className="container">
         <div className="row mt-5">
-          <div className="col">
+          <ItemList />
+
+          {/* <div className="col">
             <Card
               image={img1}
               header="Procesador Intel i9 9900"
@@ -42,7 +45,7 @@ const ItemListContainer = ({ img1, img2, img3 }) => {
               description="La notebook Lenovo es una solución tanto para trabajar y estudiar como para entretenerte."
             />
             <ItemCount stock="0" initial={initial} onAdd={Agregar} />
-          </div>
+          </div>*/}
         </div>
       </div>
     </Fragment>
