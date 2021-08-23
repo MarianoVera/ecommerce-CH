@@ -1,23 +1,25 @@
 import React, { Fragment } from "react";
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 //import { Card } from "semantic-ui-react";
 //import ItemCount from "./ItemCount/ItemCount";
-import ItemList from "../components/ItemList/ItemList";
+//import ItemList from "../components/ItemList/ItemList";
 
 const ItemListContainer = ({ img1, img2, img3 }) => {
-  const initial = 1;
-  const Agregar = (cant, stock) => {
-    if (stock > 0) {
-      return console.log(cant);
-    } else {
-      return false;
-    }
-  };
+  //const initial = 1;
+  // const Agregar = (cant, stock) => {
+  //   if (stock > 0) {
+  //     return console.log(cant);
+  //   } else {
+  //     return false;
+  //   }
+  // };
 
   return (
     <Fragment>
       <div className="container">
         <div className="row mt-5">
-          <ItemList />
+          <ItemDetailContainer />
+          {/* <ItemList /> */}
 
           {/* <div className="col">
             <Card

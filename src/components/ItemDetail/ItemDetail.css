@@ -1,0 +1,27 @@
+.ItemDetail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 120px;
+}
+
+.ItemContent {
+  margin-left: 5%;
+  margin-top: 5%;
+  line-height: 2em;
+}
+
+.Header {
+  font-size: 3rem;
+  font-weight: 1000;
+  line-height: 1em;
+  padding-bottom: 25px;
+}
+
+.Precio {
+  padding-top: 12px;
+  padding-bottom: 20px;
+  font-size: 3rem;
+  font-weight: lighter;
+}
