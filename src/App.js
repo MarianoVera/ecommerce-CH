@@ -1,21 +1,31 @@
 import "./App.css";
-import { Component, Fragment } from "react";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
-import img1 from "./components/intel.jpg";
-import img2 from "./components/keybd.jpg";
-import img3 from "./components/note1.jpg";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
         <NavBar />
-        <ItemListContainer img1={img1} img2={img2} img3={img3} />
-      </Fragment>
-    );
-  }
-}
+        <Switch>
+          <Route path="/" exact>
+            {" "}
+            <ItemListContainer />{" "}
+          </Route>
+          <Route path="/category/:categoryId">
+            <ItemListContainer />{" "}
+          </Route>
+          <Route path="/item/:itemId">
+            <ItemDetailContainer />{" "}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;

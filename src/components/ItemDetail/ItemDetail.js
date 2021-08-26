@@ -8,7 +8,6 @@ const ItemDetail = ({ data }) => {
       <Item.Group>
         <Item>
           <Item.Image size="medium" src={data.image} />
-
           <div className="ItemContent">
             <Item.Content>
               <Item.Header className="Header">{data.title}</Item.Header>

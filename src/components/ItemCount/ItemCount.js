@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Button, Label } from "semantic-ui-react";
+import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [cant, setCant] = useState(initial);
