@@ -1,8 +1,23 @@
-import React from "react";
+import { React, useState } from "react";
 import "./ItemDetail.css";
 import { Item } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ data }) => {
+  const [cantidad, setCantidad] = useState({});
+  const [selected, setSelected] = useState(false);
+
+  const initial = 1;
+  const Agregar = (cant, stock) => {
+    if (stock > 0) {
+      return setCantidad(cant), setSelected(true);
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="ItemDetail">
       <Item.Group>
@@ -13,6 +28,15 @@ const ItemDetail = ({ data }) => {
               <Item.Header className="Header">{data.title}</Item.Header>
               <Item className="Precio">${data.price}</Item>
               <Item.Description>{data.description}</Item.Description>
+
+              {selected ? (
+                <Link to="/cart">
+                  {" "}
+                  <Button content="Finalizar compra" color="olive" />
+                </Link>
+              ) : (
+                <ItemCount stock="10" initial={initial} onAdd={Agregar} />
+              )}
             </Item.Content>
           </div>
         </Item>
