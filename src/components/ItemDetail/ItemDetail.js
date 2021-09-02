@@ -4,18 +4,25 @@ import { Item } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useCardContext } from "../CartContext/CartContext";
 
 const ItemDetail = ({ data }) => {
   const [cantidad, setCantidad] = useState({});
   const [selected, setSelected] = useState(false);
 
+  const { addToCart } = useCardContext();
+
   const initial = 1;
   const Agregar = (cant, stock) => {
     if (stock > 0) {
-      return setCantidad(cant), setSelected(true);
+      addToCart(data, cant);
+      setCantidad(cant);
+      setSelected(true);
     } else {
       return false;
     }
+
+    addToCart(data, cant);
   };
 
   return (
