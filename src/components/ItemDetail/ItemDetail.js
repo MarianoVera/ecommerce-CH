@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useCardContext } from "../CartContext/CartContext";
 
 const ItemDetail = ({ data }) => {
-  const [cantidad, setCantidad] = useState({});
+  //const [cantidad, setCantidad] = useState({});
   const [selected, setSelected] = useState(false);
 
   const { addToCart } = useCardContext();
@@ -16,13 +16,11 @@ const ItemDetail = ({ data }) => {
   const Agregar = (cant, stock) => {
     if (stock > 0) {
       addToCart(data, cant);
-      setCantidad(cant);
+      //setCantidad(cant);
       setSelected(true);
     } else {
       return false;
     }
-
-    addToCart(data, cant);
   };
 
   return (

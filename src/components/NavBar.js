@@ -1,7 +1,10 @@
 import CardWidget from "./CartWidget.js";
 import { Link } from "react-router-dom";
+import { useCardContext } from "./CartContext/CartContext.js";
 
 const NavBar = () => {
+  const { cart } = useCardContext();
+
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
@@ -53,7 +56,7 @@ const NavBar = () => {
             </Link>
           </ul>
         </div>
-        <CardWidget />
+        <Link to="/cart">{cart.length > 0 ? <CardWidget /> : <h3>-</h3>}</Link>
       </div>
     </nav>
   );
