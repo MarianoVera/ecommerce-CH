@@ -4,28 +4,47 @@ import Item from "../Item/Item";
 import { useParams } from "react-router-dom";
 import { Header } from "semantic-ui-react";
 
+import { db } from "../../firebase";
+
 const ItemList = () => {
   const [productos, setProductos] = useState([]);
   const { categoryId } = useParams();
   //const [header, setHeader] = useState("");
 
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products?limit=7`)
-      .then((response) => response.json())
-      .then((res) => {
-        categoryId
-          ? setProductos(res.filter((e) => e.category === categoryId))
-          : setProductos(res);
+  const getProducts = () => {
+    db.collection("products").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
       });
+      categoryId
+        ? setProductos(docs.filter((e) => e.categoryID === categoryId))
+        : setProductos(docs);
+      //setProductos(docs);
+    });
+  };
 
-    // if (categoryId === "jewelery") {
-    //   setHeader("Jewelery");
-    // } else if (categoryId === "men's clothing") {
-    //   setHeader("Men's Clothing");
-    // } else {
-    //   setHeader("Catálogo");
-    // }
-  }, [categoryId]);
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(`https://fakestoreapi.com/products?limit=7`)
+  //     .then((response) => response.json())
+  //     .then((res) => {
+  //       categoryId
+  //         ? setProductos(res.filter((e) => e.category === categoryId))
+  //         : setProductos(res);
+  //     });
+
+  //   // if (categoryId === "jewelery") {
+  //   //   setHeader("Jewelery");
+  //   // } else if (categoryId === "men's clothing") {
+  //   //   setHeader("Men's Clothing");
+  //   // } else {
+  //   //   setHeader("Catálogo");
+  //   // }
+  // }, [categoryId]);
 
   return (
     <div>

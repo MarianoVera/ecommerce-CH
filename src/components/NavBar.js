@@ -33,7 +33,7 @@ const NavBar = () => {
                 </a>
               </li>
             </Link>
-            <Link to="/category/men's clothing">
+            <Link to="/category/mens">
               <li className="nav-item">
                 <a className="nav-link" href="#Men's Clothing">
                   Men's Clothing
