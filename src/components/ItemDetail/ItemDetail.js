@@ -15,7 +15,7 @@ const ItemDetail = ({ data }) => {
   const initial = 1;
   const Agregar = (cant, stock) => {
     if (stock > 0) {
-      addToCart(data, cant);
+      addToCart(data[0], cant);
       //setCantidad(cant);
       setSelected(true);
     } else {
@@ -27,12 +27,12 @@ const ItemDetail = ({ data }) => {
     <div className="ItemDetail">
       <Item.Group>
         <Item>
-          <Item.Image size="medium" src={data.image} />
+          <Item.Image size="medium" src={data[0].image} />
           <div className="ItemContent">
             <Item.Content>
-              <Item.Header className="Header">{data.title}</Item.Header>
-              <Item className="Precio">${data.price}</Item>
-              <Item.Description>{data.description}</Item.Description>
+              <Item.Header className="Header">{data[0].title}</Item.Header>
+              <Item className="Precio">${data[0].price}</Item>
+              <Item.Description>{data[0].description}</Item.Description>
 
               {selected ? (
                 <Link to="/cart">

@@ -1,18 +1,19 @@
 import React from "react";
 import { useCardContext } from "../CartContext/CartContext";
-import { Card, Image, Button } from "semantic-ui-react";
+import { Card, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./CartStyle.css";
-import { useState } from "react/cjs/react.development";
+import EndBuy from "../endBuy/EndBuy";
+//import { useState } from "react/cjs/react.development";
 
 const Cart = () => {
   const { cart, removeItem, totalPrice } = useCardContext();
-  const [empty, setEmpty] = useState(false);
+  // const [empty, setEmpty] = useState(false);
 
-  if (cart.lenght === 0) {
-    setEmpty(true);
-  }
-  const montoTotal = cart.map((prod) => prod.price * prod.quantity);
+  // if (cart.lenght === 0) {
+  //   setEmpty(true);
+  // }
+  //const montoTotal = cart.map((prod) => prod.price * prod.quantity);
 
   return (
     <div className="CartStyle">
@@ -44,6 +45,8 @@ const Cart = () => {
       ) : (
         <h2> Total monto: ${totalPrice}</h2>
       )}
+
+      <EndBuy />
     </div>
   );
 };
