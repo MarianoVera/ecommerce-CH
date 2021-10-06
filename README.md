@@ -8,7 +8,7 @@
 
 
 
-En la versión actual, cuanta con dos categorías, **Men's Clothing** y **Jewelery**.
+En la versión actual, cuenta con dos categorías, **Men's Clothing** y **Jewelery**.
 Seleccionando cualquiera de ellas, al usuario se le ofrecerá los productos disponibles de dicha categoría. Una vez hecha la elección del artículo, los usuarios podrán tener acceso al **Detalle** y seleccionar la cantidad requerida, siempre teniendo como límite el stock disponible. En caso de querer continuar con otro producto, desde dicha pantalla podrá volver al menú, desde el botón _Seguir comprando_. Sino, podrá dirigirse al carrito de compras, mediante _Finalizar compra_.
 
 Desde el **Carrito de compras** tendrá acceso a cada ítem elegido, con la cantidad seleccionada y el precio parcial. Desde allí podrá _Eliminar_ cada ítem, _Limpiar el carrito_ o _Volver a Home_ para continuar con su compra. Luego, completando los campos correspondientes e indicando _Finalizar compra_, al usuario se le proporcionará un número de ID de compra.
@@ -19,11 +19,11 @@ A continuación, un GIF presentando el sitio:
 ![univ](https://user-images.githubusercontent.com/63387258/136291418-8235a79f-513e-4d89-a3f4-40964cda4b7d.gif)
 
 # Dependencias utilizadas
-React Router Dom
-Axios
-Firebase
-Fontawesome
-Semantic-UI-React
+- React Router Dom
+- Axios
+- Firebase
+- Fontawesome
+- Semantic-UI-React
 
 # Version
 1.0
