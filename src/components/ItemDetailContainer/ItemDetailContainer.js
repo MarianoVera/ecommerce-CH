@@ -26,17 +26,7 @@ const ItemDetailContainer = () => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, []);
-
-  // useEffect(() => {
-  //   fetch(`https://fakestoreapi.com/products/${itemId}`)
-  //     .then((response) => response.json())
-  //     .then((res) => setProductos(res));
-
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, [itemId]);
+  });
 
   return (
     <div>

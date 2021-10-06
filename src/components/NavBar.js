@@ -47,13 +47,6 @@ const NavBar = () => {
                 </a>
               </li>
             </Link>
-            <Link to="/contact">
-              <li className="nav-item">
-                <a className="nav-link" href="#contact">
-                  Contact
-                </a>
-              </li>
-            </Link>
           </ul>
         </div>
         <Link to="/cart">{cart.length > 0 ? <CardWidget /> : <h3>-</h3>}</Link>

@@ -3,6 +3,7 @@ import { Form } from "semantic-ui-react";
 import { db } from "../../firebase";
 import firebase from "firebase/app";
 import { useCardContext } from "../CartContext/CartContext";
+import "./EndBuy.css";
 
 const EndBuy = () => {
   const { cart, totalPrice } = useCardContext();
@@ -32,12 +33,13 @@ const EndBuy = () => {
         querySnapshot.forEach((doc) => {
           getID.push(doc.id);
         });
+
         alert(getID);
       });
   };
 
   return (
-    <div>
+    <div className="form">
       <Form onSubmit={finish}>
         <Form.Group>
           <Form.Input
@@ -58,7 +60,7 @@ const EndBuy = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <Form.Button content="Submit" />
+          <Form.Button content="Finalizar compra" color="green" />
         </Form.Group>
       </Form>
     </div>

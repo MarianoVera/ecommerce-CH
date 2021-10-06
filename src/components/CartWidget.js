@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Item } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { useCardContext } from "./CartContext/CartContext";
 
 const CartWidget = () => {
